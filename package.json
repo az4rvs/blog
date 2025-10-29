@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fontsource/playfair-display": "^5.2.8",
+    "@upstash/redis": "^1.35.6",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.545.0",
     "next": "^14.2.33",
@@ -16,7 +17,8 @@
     "react-dom": "^18.3.1",
     "react-icons": "^5.5.0",
     "remark": "^14.0.2",
-    "remark-html": "^15.0.1"
+    "remark-html": "^15.0.1",
+    "swr": "^2.3.6"
   },
   "devDependencies": {
     "@types/node": "24.7.2",

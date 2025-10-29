@@ -1,7 +1,6 @@
 ---
 title: "Heal - HTB"
 date: "2025-07-29"
-views: 0
 
 ---
 ![Pawned](/images/HTB/Pasted_image_20250729093152.png)

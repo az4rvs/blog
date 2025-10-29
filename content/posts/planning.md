@@ -1,7 +1,6 @@
 ---
 title: "Planning - HTB"
 date: "2025-09-26"
-views: 0
 
 ---
 ![Pawned](/images/HTB/Pasted_image_20250926073003.png)

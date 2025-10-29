@@ -1,5 +1,11 @@
 import { getPostBySlug, PostData } from '@/lib/posts';
 import { notFound } from 'next/navigation';
+import { Redis } from "@upstash/redis";
+
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL!,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+});
 
 interface PageProps {
   params: { slug: string };
@@ -10,6 +16,8 @@ export default async function PostPage({ params }: PageProps) {
 
   if (!post) return notFound();
   
+  await redis.incr(`pageviews:${params.slug}`);
+
   const postDate = new Date(post.date + 'T00:00:00');
   const formattedDate = postDate.toLocaleDateString('en-US', {
     year: 'numeric',
@@ -25,4 +33,3 @@ export default async function PostPage({ params }: PageProps) {
     </article>
   );
 }
-

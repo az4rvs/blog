@@ -1,7 +1,6 @@
 ---
 title: "Titanic - HTB"
 date: "2025-07-11"
-views: 0
 
 ---
 ![Pawned](/images/HTB/Pasted_image_20250715162059.png)

@@ -1,7 +1,6 @@
 ---
 title: "Bbbloat"
 date: "2025-07-20"
-views: 0
 
 ---
 ![Resolved](/images/reversing/Pasted_image_20250721033445.png)

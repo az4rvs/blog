@@ -1,7 +1,6 @@
 ---
 title: "Kernel Debugging I"
 date: "2025-08-10"
-views: 0
 
 ---
 

@@ -2,8 +2,8 @@ import './globals.css';
 import Header from '@/components/Header';
 
 export const metadata = {
-  title: 'Mi Sitio',
-  description: 'Mi portafolio y blog',
+  title: "Jose Melgarejo's blog",
+  description: 'Cooking',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -18,4 +18,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-

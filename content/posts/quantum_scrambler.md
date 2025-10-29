@@ -1,7 +1,6 @@
 ---
 title: "Quantum Scrambler"
 date: "2025-07-21"
-views: 0
 
 ---
 ![Resolved](/images/reversing/Pasted_image_20250725125300.png)

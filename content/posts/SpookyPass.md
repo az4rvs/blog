@@ -1,7 +1,6 @@
 ---
 title: "SpookyPass"
 date: "2025-07-19"
-views: 0
 
 ---
 ![Pawned](/images/reversing/Pasted_image_20250719031739.png)

@@ -9,8 +9,6 @@ export interface PostData {
   slug: string;
   title: string;
   date: string;
-  tags: string[];
-  views: number;
   contentHtml: string;
 }
 
@@ -33,10 +31,8 @@ export async function getAllPosts(): Promise<PostData[]> {
         slug,
         title: data.title || 'Sin título',
         date: data.date || '',
-        tags: data.tags || [],
-        views: data.views || 0,
         contentHtml,
-      } as PostData;
+      }
     })
   );
 
@@ -59,8 +55,6 @@ export async function getPostBySlug(slug: string): Promise<PostData | null> {
     slug,
     title: data.title || 'Sin título',
     date: data.date || '',
-    tags: data.tags || [],
-    views: data.views || 0,
     contentHtml,
   };
 }

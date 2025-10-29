@@ -1,7 +1,6 @@
 ---
 title: "Optimum - HTB"
 date: "2025-07-12"
-views: 0
 
 ---
 ![Pawned](/images/HTB/Pasted_image_20250720150035.png)

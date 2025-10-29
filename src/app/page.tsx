@@ -1,9 +1,24 @@
+export const dynamic = "force-dynamic";
+
 import Link from 'next/link';
 import { getAllPosts, PostData } from '@/lib/posts';
-import '@fontsource/playfair-display';
+import { Redis } from "@upstash/redis";
+import ViewCount from "@/components/ViewCount";
 
 export default async function Home() {
   const posts: PostData[] = await getAllPosts();
+
+  const redis = new Redis({
+    url: process.env.UPSTASH_REDIS_REST_URL!,
+    token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+  });
+
+  const postsWithViews = await Promise.all(
+    posts.map(async (post) => {
+      const views = (await redis.get<number>(`pageviews:${post.slug}`)) || 0;
+      return { ...post, views };
+    })
+  );
 
   return (
     <main>
@@ -14,7 +29,7 @@ export default async function Home() {
       </div>
 
       <div className="post-list divide-y divide-gray-800">
-        {posts.map((post) => (
+        {postsWithViews.map((post) => (
           <div
             key={post.slug}
             className="post-item py-2 hover:border-gray-700 transition-colors"
@@ -26,7 +41,7 @@ export default async function Home() {
               </Link>
             </div>
             <div className="post-views text-gray-500 text-sm text-right">
-              {post.views}
+              <ViewCount slug={post.slug} />
             </div>
           </div>
         ))}
